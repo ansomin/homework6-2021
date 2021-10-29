@@ -33,7 +33,40 @@ header {
 }
 
 .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
     border: solid 10px #50C7C7;
     margin: 10px;
     width: 300px;
+}
+
+#logo {
+    animation-name: expand;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes expand {
+    from {
+        width: 50px;
+        opacity: 0;
+    }
+    to {
+        width: 425px;
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 850px){
+    header {
+        position: sticky;
+    }
+
+    nav_links {
+
+    }
 }
