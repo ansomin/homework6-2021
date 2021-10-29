@@ -5,18 +5,21 @@ body {
 }
 
 header {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 /* do challenge 5. */
+a:visited {
+    color: blue;
+}
 
 .nav_links {
     display: flex;
     flex-direction: column;
 }
-
 
 .card header {
     background-color: #288088;
@@ -28,8 +31,13 @@ header {
 
 .pricing {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+}
+
+.card {
+    flex-basis: 450px;
 }
 
 .gallery {
@@ -63,10 +71,56 @@ header {
 
 @media screen and (min-width: 850px){
     header {
+        display: flex;
+        flex-direction: row;
         position: sticky;
+        top: 0;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    nav_links {
+    .pricing header {
+        position: static;
+        justify-content: center;
+    }
 
+    .nav_links {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card {
+        flex-basis: 250px;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        background-image: none;
+    }
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    #gallery, .gallery {
+        display: none;
     }
 }
