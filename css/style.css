@@ -103,6 +103,7 @@ a:visited {
 @media print {
     body {
         background-image: none;
+        background-color: white;
     }
     nav {
         width: 100%;
@@ -118,6 +119,11 @@ a:visited {
     .pricing {
         flex-wrap: nowrap;
         align-items: flex-end;
+    }
+
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 250px;
     }
 
     #gallery, .gallery {
